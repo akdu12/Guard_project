@@ -23,27 +23,46 @@ def getReadingToAPI():
     gas = str(getGas())
     lux = str(getlight())
     prox = str(getProximity())
-    
-    return temperature,pressure,humidity,gas, lux, prox
+    magnetometer = str(getMagnetometer())
+    accelerometer = str(getAaccelerometer())
+    rgbc = str(getColour())
+    Spectrum =str(getSpectrum())
+ 
+    return temperature,pressure,humidity,gas, lux, prox, magnetometer, accelerometer, rgbc, Spectrum
 
 
 if __name__=="__main__":
     
     while True:
-        temperature,pressure,humidity,gas, lux, prox = getReadingToAPI()
+        temperature,pressure,humidity,gas, lux, prox, magnetometer, accelerometer, rgbc, Spectrum  = getReadingToAPI()
         now = datetime.now()
 
-        if temperature == '-1' or lux =='-1' or pressure == '-1' or humidity == '-1' or gas == '-1' or prox == '-1':
-            time.sleep(5)
+        if temperature == '-1' or lux =='-1' or pressure == '-1' or humidity == '-1' or gas == '-1' or prox == '-1' or magnetometer == '-1' or accelerometer == '-1' or rgbc == '-1' or Spectrum == '-1' :
+            time.sleep(120)
             continue
         else:
-            BME688_data = {"Temperature":temperature, "Pressure":pressure , "Humidity": humidity, "Gas":gas, "time":str(now)}     
-            db.child("BME688").push(BME688_data)
-            print(BME688_data)
+            BME680_data = {"Temperature":temperature, "Pressure":pressure , "Humidity": humidity, "Gas":gas, "time":str(now)}     
+            db.child("BME680").push(BME680_data)
+            print(BME680_data)
+
             LTR_559_data={"light":lux , "Proximity":prox , "time":str(now) }
-            db.child("LTR-559").push(LTR_559_data)
+            db.child("LTR_559").push(LTR_559_data)
             print(LTR_559_data)
-            time.sleep(5)
+
+            LSM303D_data={"Magnetometer": magnetometer, "Accelerometer":accelerometer , "time":str(now) }
+            db.child("LSM303D").push(LSM303D_data)
+            print(LSM303D_data)
+
+            BH1745_data={"RGBC": rgbc, "time":str(now) }
+            db.child("BH1745").push(BH1745_data)
+            print(BH1745_data)
+
+            AS7262_data={"Spectrum": Spectrum, "time":str(now) }
+            db.child("AS7262").push(AS7262_data)
+            print(AS7262_data)
+
+
+            time.sleep(120)
   
 
 
