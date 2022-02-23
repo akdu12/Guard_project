@@ -88,7 +88,7 @@ class sensors extends StatelessWidget {
               );
             },
           ),
-          sensorsCards(
+          /*sensorsCards(
             image: "assets/images/light.png",
             title: "Light & Proximity",
             name: name2,
@@ -100,7 +100,7 @@ class sensors extends StatelessWidget {
                 ),
               );
             },
-          ),
+          ),*/
         ],
       ),
     );

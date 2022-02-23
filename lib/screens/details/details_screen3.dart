@@ -146,7 +146,7 @@ class DetailsScreen4 extends ConsumerState<DetailsScreenS> {
                                 ],
                               )
                                   : Row()
-                              ,SizedBox(height: 40),
+                              ,SizedBox(height: 0.5),
                               value == true
                                   ? Row(
                                 children: [
@@ -173,12 +173,12 @@ class DetailsScreen4 extends ConsumerState<DetailsScreenS> {
                                               color: Colors.grey),
                                         ),
                                         Text(
-                                          '* Spectrum consists of 6 colors which are:'
-                                              '1: Red'
-                                              '2: Blue'
-                                              '3: Green'
-                                              '4: Violet'
-                                              '5: Orange'
+                                          '* Spectrum consists of 6 colors which are:\n'
+                                              '1: Red\n'
+                                              '2: Blue\n'
+                                              '3: Green\n'
+                                              '4: Violet\n'
+                                              '5: Orange\n'
                                               '6: Yellow',
                                           style: TextStyle(
                                             fontSize: 16,
@@ -205,7 +205,7 @@ class DetailsScreen4 extends ConsumerState<DetailsScreenS> {
 
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: kPrimaryColor2,
+      backgroundColor: Colors.indigo,
       elevation: 0,
       centerTitle: true,
       title: Text("DINING ROOM"),

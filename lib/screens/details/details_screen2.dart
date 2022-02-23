@@ -191,7 +191,7 @@ class DetailsScreen3 extends ConsumerState<DetailsScreen2> {
 
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: kPrimaryColor2,
+      backgroundColor: Colors.indigo,
       elevation: 0,
       centerTitle: true,
       title: Text("MY ROOM"),

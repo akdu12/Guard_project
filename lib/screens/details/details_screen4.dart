@@ -1,4 +1,5 @@
 
+import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:guard/components/sensor_status_switcher.dart';
@@ -191,63 +192,43 @@ class DetailsScreen5 extends ConsumerState<DetailsScreenM> {
                             )
 
                                 : Row()
-,
-                            SizedBox(height: 40),
-                            value == true
-                                ? Row(
+                            ,SizedBox(height: 0.5),
+                            if (value == true) Row(
                               children: [
                                 Expanded(
                                   child: Column(
                                     crossAxisAlignment:
                                     CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        'Note:',
-                                        style: TextStyle(
-                                          height: 2,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600,
-                                          color: Colors.grey,
-                                        ),
-                                      ),
-                                      Text(
-                                        '*Accelerometer measures the speed and acceleration around the room',
-                                        style: TextStyle(
-                                            height: 2,
-                                            fontSize: 16,
-                                            color: Colors.grey),
-                                      ),
-                                      Text(
-                                        '*Magnetometer measures the magnetic field of earth',
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          height: 2,
-                                          color: Colors.grey,
-                                        ),
-                                      ),
-                                    ],
+                                      ]
                                   ),
                                 ),
 
 
                               ],
-                            )
+                            ) else Row()
+                  ])));
 
-                                : Row()
-
-                          ])));
 
                 });
 
           },
+
           error: (err, _) => Text(err.toString()),
           loading: () => Center(child: CircularProgressIndicator())),
     );
   }
 
+
+  }
+
+
+
+
+
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: kPrimaryColor2,
+      backgroundColor: kPrimaryColor,
       elevation: 0,
       centerTitle: true,
       title: Text("LIVING ROOM"),
@@ -256,11 +237,11 @@ class DetailsScreen5 extends ConsumerState<DetailsScreenM> {
         //   icon: Icon(Icons.edit),
         //   onPressed: () {},
         // ),
-        IconButton(
+        /*IconButton(
           icon: Icon(Icons.refresh),
           onPressed: () {},
-        ),
+        ),*/
       ],
     );
   }
-}
+

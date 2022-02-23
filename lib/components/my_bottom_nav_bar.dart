@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:guard/screens/home/home_screen.dart';
+import 'package:guard/screens/uprofile/user_profile.dart';
 
 
 import '../constants.dart';
@@ -19,13 +21,13 @@ class MyBottomNavBar extends StatelessWidget {
       ),
       height: 80,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: kPrimaryColor.withOpacity(0.5),
         boxShadow: [
-          BoxShadow(
+         /* BoxShadow(
             offset: Offset(0, 0),
             blurRadius: 35,
             color: kPrimaryColor.withOpacity(0.38),
-          ),
+          ),*/
         ],
       ),
       child: Row(
@@ -33,30 +35,43 @@ class MyBottomNavBar extends StatelessWidget {
         children: <Widget>[
           IconButton(
             icon: Icon(
-              Icons.person,
-              color: Colors.grey,
+              Icons.warning,
+              color: Colors.white,
               size: 35,
             ),
             //icon: SvgPicture.asset("assets/icons/user-icon.svg"),
-            onPressed: () {},
+            onPressed: (){
+//under construction
+            },
           ),
           IconButton(
             icon: Icon(
               Icons.home,
-              color: Colors.grey,
+              //title: Text(""),
+              color: Colors.white,
               size: 35,
             ),
             //Image.asset("assets/images/home.png"),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                  builder: (context) =>HomeScreen()));
+            },
           ),
           IconButton(
             icon: Icon(
-              Icons.settings,
-              color: Colors.grey,
+              Icons.person,
+              color: Colors.white,
               size: 35,
             ),
             //icon: SvgPicture.asset("assets/icons/user-icon.svg"),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>user_profile()));
+            },
           ),
         ],
       ),
