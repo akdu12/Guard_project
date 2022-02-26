@@ -163,7 +163,7 @@ class _registerState extends State<register> {
       obscureText: true,
       validator: (value)
       {
-        if(confirmPasswordEditingController.text.length > 6 && passwordEditingController.text != value)
+        if(confirmPasswordEditingController.text != passwordEditingController.text)
           {
             return ("Passwords don't match");
           }
