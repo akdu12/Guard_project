@@ -1,7 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:guard/model/user_model.dart';
 
 import '../../../constants.dart';
+
+User? user = FirebaseAuth.instance.currentUser;
+UserModel loggedInUser = UserModel();
+
 
 class HeaderWithSearchBox extends StatelessWidget {
   const HeaderWithSearchBox({
@@ -11,7 +18,11 @@ class HeaderWithSearchBox extends StatelessWidget {
 
   final Size size;
 
+
   @override
+
+  @override
+
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: kDefaultPadding * 2.5),

@@ -159,11 +159,18 @@ class _loginState extends State<login> {
                         GestureDetector(onTap: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => register()));
                         },
-                          child: Text("Sign Up!", style: TextStyle(color: Colors.indigo,fontWeight: FontWeight.bold, fontSize: 15),
-                          ),
-                        )
+                          child: Text("Sign Up!", style: TextStyle(color: kPrimaryColor,fontWeight: FontWeight.bold, fontSize: 15)),
+                        ),
+                        /*GestureDetector(onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => register()));
+                        },
+                          child: Text("\nForgot Password?", style: TextStyle(color: kPrimaryColor,fontWeight: FontWeight.bold, fontSize: 15)),
+                        )*/
+                        //child: Text("Forgot Password?", style: TextStyle(color: kPrimaryColor,fontWeight: FontWeight.bold, fontSize: 15),
                       ],
                     )
+
+
 
 
 

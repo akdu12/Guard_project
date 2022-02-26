@@ -1,7 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:guard/components/my_bottom_nav_bar.dart';
 import 'package:guard/constants.dart';
+import 'package:guard/model/user_model.dart';
+import 'package:guard/screens/auth/login_screen.dart';
 
 class user_profile extends StatefulWidget {
   const user_profile({Key? key}) : super(key: key);
@@ -12,6 +16,28 @@ class user_profile extends StatefulWidget {
 }
 
 class _user_profileState extends State<user_profile> {
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseFirestore.instance
+    .collection("users")
+    .doc(user!.uid)
+    .get()
+    .then((value){
+      this.loggedInUser = UserModel.fromMap(value.data());
+      setState(() {
+
+
+      });
+
+    });
+    }
+
+
+
 
 
   @override
@@ -28,13 +54,13 @@ class _user_profileState extends State<user_profile> {
                 child: Image.asset("assets/images/user_white.png"),
               ),
               SizedBox(height: 50),
-                Text("Sarah AlHaddab",style: TextStyle(color: kPrimaryColor, fontWeight: FontWeight.bold,fontSize: 20),
+                Text("${loggedInUser.firstName} ${loggedInUser.secondName}",style: TextStyle(color: kPrimaryColor, fontWeight: FontWeight.bold,fontSize: 20),
                 ),
-                Text("Sarah@guard.com",style: TextStyle(color: kPrimaryColor, fontWeight: FontWeight.bold,fontSize: 20),
+                Text("${loggedInUser.email}",style: TextStyle(color: kPrimaryColor, fontWeight: FontWeight.bold,fontSize: 20),
                 ),
               SizedBox(height:300,),
-              //ActionChip(label: Text("Logout"),onPressed: (){},elevation: 5,backgroundColor: reddish,),
-              logoutButton,
+              ActionChip(label: Text("Logout"),onPressed: (){logout(context);},elevation: 5,backgroundColor: reddish,),
+
 
 
 
@@ -63,7 +89,7 @@ class _user_profileState extends State<user_profile> {
   }
 
 
-  final logoutButton = Material(
+  /*final logoutButton = Material(
     elevation: 0,
     borderRadius: BorderRadius.circular(30),
     color: reddish,
@@ -71,7 +97,7 @@ class _user_profileState extends State<user_profile> {
     padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
     minWidth: 350,
     onPressed: () {
-
+      logout(context);
     },
     child: Text(
     "Logout",
@@ -84,7 +110,13 @@ class _user_profileState extends State<user_profile> {
 
 
     ),),
-    );
+    );*/
+
+  Future<void> logout(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => login()));
+
+  }
 
   }
 
