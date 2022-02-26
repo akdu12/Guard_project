@@ -70,7 +70,9 @@ class _user_profileState extends State<user_profile> {
     child: MaterialButton(
     padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
     minWidth: 350,
-    onPressed: () {},
+    onPressed: () {
+
+    },
     child: Text(
     "Logout",
     textAlign: TextAlign.center,
