@@ -3,27 +3,49 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:guard/model/user_model.dart';
-
+import 'package:guard/screens/uprofile/user_profile.dart';
 import '../../../constants.dart';
 
-User? user = FirebaseAuth.instance.currentUser;
-UserModel loggedInUser = UserModel();
 
 
-class HeaderWithSearchBox extends StatelessWidget {
-  const HeaderWithSearchBox({
-    Key? key,
-    required this.size,
-  }) : super(key: key);
 
+class HeaderWithSearchBox extends StatefulWidget {
+  const HeaderWithSearchBox({Key? key,required this.size}) : super(key: key);
   final Size size;
 
+  @override
+  _header createState() => _header();
+
+
+}
+
+class _header extends State<HeaderWithSearchBox>{
+  @override
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
+
 
   @override
+  void initState() {
+    super.initState();
+    FirebaseFirestore.instance
+        .collection("users")
+        .doc(user!.uid)
+        .get()
+        .then((value){
+      this.loggedInUser = UserModel.fromMap(value.data());
+      setState(() {
 
-  @override
+
+      });
+
+    });
+  }
+
 
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Container(
       margin: EdgeInsets.only(bottom: kDefaultPadding * 2.5),
       // It will cover 20% of our total height
@@ -47,7 +69,7 @@ class HeaderWithSearchBox extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Text(
-                  'Hi Username!',
+                  "Hi ${loggedInUser.firstName}!",
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),
@@ -103,4 +125,7 @@ class HeaderWithSearchBox extends StatelessWidget {
       ),
     );
   }
+
+
+
 }
