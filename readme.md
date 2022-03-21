@@ -22,7 +22,7 @@ Visual Code Studio<br />
 Android Studio<br />
 Firebase database<br />
 
-## How to use the system:  <br /><br />
+## How to use the system:  <br />
 1- Connect your breakout garden to your Raspberry Pi<br />
 2- Connect all 4 sensors to the breakout garden hat<br />
 3- Start the Raspberry Pi and configure Breakout garden + sensors<br />
