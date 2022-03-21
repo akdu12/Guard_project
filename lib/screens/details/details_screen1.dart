@@ -43,10 +43,10 @@ class DetailsScreenx extends ConsumerState<DetailsScreen> {
                       );
                     }
                     final data = snapshot.data!;
-                    final temperature = data["Temperature"];
+                    final temperature = double.parse(data["Temperature"]);
                     final gas = data["Gas"];
-                    final humidity = data["Humidity"];
-                    final pressure = data["Pressure"];
+                    final humidity = double.parse(data["Humidity"]);
+                    final pressure = double.parse(data["Pressure"]);
                     return SafeArea(
                         child: Padding(
                             padding: EdgeInsets.symmetric(
@@ -126,7 +126,9 @@ class DetailsScreenx extends ConsumerState<DetailsScreen> {
                                                 style: TextStyle(
                                                   fontSize: 16,
                                                   fontWeight: FontWeight.w600,
-                                                  color: Colors.grey,
+                                                  color: (temperature<40)
+                                                  ? Colors.green
+                                                  : Colors.red,
                                                 ),
                                               ),
                                               Text(
@@ -148,7 +150,9 @@ class DetailsScreenx extends ConsumerState<DetailsScreen> {
                                                 style: TextStyle(
                                                   fontSize: 16,
                                                   fontWeight: FontWeight.w600,
-                                                  color: Colors.grey,
+                                                  color: (pressure<1100)
+                                                      ? Colors.green
+                                                      : Colors.red,
                                                 ),
                                               ),
                                               Text(
@@ -183,7 +187,9 @@ class DetailsScreenx extends ConsumerState<DetailsScreen> {
                                                 style: TextStyle(
                                                   fontSize: 16,
                                                   fontWeight: FontWeight.w600,
-                                                  color: Colors.grey,
+                                                  color: (humidity<50)
+                                                      ? Colors.green
+                                                      : Colors.red,
                                                 ),
                                               ),
                                               Text(
