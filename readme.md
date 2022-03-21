@@ -1,25 +1,34 @@
-Guard is an IoT security system that detects abnormalities in IoT devices. 
+# GUARD  <br />
 
-Aim: Detect abnormalities in IoT devices and inform smart-home owner of these abnormalities.
+Guard is an IoT security system that detects abnormalities in IoT devices. <br />
 
-Technologies used:
+## Aim:<br />
 
-Hardware:
-Raspberry Pi
-Breakout Garden
-BME688 sensor
-LTR559 sensor
-AS7262 sensor
-LSM303D sensor
+Detect abnormalities in IoT devices and inform smart-home owner of these abnormalities.<br />
 
-Software:
-Python
-Visual Code Studio
-Android Studio
-Firebase database
+## Technologies used: <br />
 
-How to use the system:
-1- Start running the Pyrebase.py and SensorManager.py on the Raspberry Pi
-2- Make sure readings are sent to the database
-3- Observe the mobile application to check readings
-4- Ability to turn sensors on/off via mobile application
+### Hardware:<br />
+Raspberry Pi<br />
+Breakout Garden<br />
+BME688 sensor (Air Quality)<br />
+LTR559 sensor (Light Sensor)<br />
+AS7262 sensor (Spectrum)<br />
+LSM303D sensor (Motion)<br />
+
+### Software:<br />
+Python<br />
+Visual Code Studio<br />
+Android Studio<br />
+Firebase database<br />
+
+## How to use the system:  <br /><br />
+1- Connect your breakout garden to your Raspberry Pi<br />
+2- Connect all 4 sensors to the breakout garden hat<br />
+3- Start the Raspberry Pi and configure Breakout garden + sensors<br />
+4- Pull "SensorManager.py" and "Pyrebase.py" codes from GitHub and run them in the Raspberry Pi<br />
+5- Make sure readings are sent to the database<br />
+6- Open "guard_app" granch and select "Download file"<br />
+7- Open Android Studio and run the code<br />
+8- Experience all features provided by the mobile application
+
