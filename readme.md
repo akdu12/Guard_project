@@ -29,7 +29,7 @@ Jupyter Notebook<br />
 3- Start the Raspberry Pi and configure Breakout garden + sensors<br />
 4- Pull "SensorManager.py" and "Pyrebase.py" codes from GitHub and run them in the Raspberry Pi<br />
 5- Make sure readings are sent to the database<br />
-6- Open "guard_app" granch and select "Download file"<br />
+6- Open "guard_app" branch and select "Download file"<br />
 7- Open Android Studio and run the code<br />
 8- Experience all features provided by the mobile application
 
