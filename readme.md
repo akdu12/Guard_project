@@ -8,7 +8,7 @@ Detect abnormalities in IoT devices and inform smart-home owner of these abnorma
 
 ## Technologies used: <br />
 
-### Hardware:<br />
+#### Hardware:<br />
 Raspberry Pi<br />
 Breakout Garden<br />
 BME688 sensor (Air Quality)<br />
@@ -16,7 +16,7 @@ LTR559 sensor (Light Sensor)<br />
 AS7262 sensor (Spectrum)<br />
 LSM303D sensor (Motion)<br />
 
-### Software:<br />
+#### Software:<br />
 Python<br />
 Visual Code Studio<br />
 Android Studio<br />
