@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:guard/screens/auth/forget_password.dart';
 
 import 'package:guard/screens/auth/registration_screen.dart';
 import 'package:guard/constants.dart';
@@ -155,20 +157,36 @@ class _loginState extends State<login> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        GestureDetector(onTap:(){
+                          Navigator.push(context,MaterialPageRoute(builder: (context) => resetScreen()));
+
+                        },
+                          child: Text("\nForgot Password?\n", style:TextStyle(color: kPrimaryColor,fontWeight: FontWeight.bold, fontSize: 15),
+
+                        )
+
+
+
+
+                        )]
+
+                    )
+
+
+
+                    ,Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
                         Text("Don't have an account? "),
                         GestureDetector(onTap: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => register()));
                         },
                           child: Text("Sign Up!", style: TextStyle(color: kPrimaryColor,fontWeight: FontWeight.bold, fontSize: 15)),
                         ),
-                        /*GestureDetector(onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => register()));
-                        },
-                          child: Text("\nForgot Password?", style: TextStyle(color: kPrimaryColor,fontWeight: FontWeight.bold, fontSize: 15)),
-                        )*/
-                        //child: Text("Forgot Password?", style: TextStyle(color: kPrimaryColor,fontWeight: FontWeight.bold, fontSize: 15),
-                      ],
+                          ],
                     )
+
+
 
 
 
