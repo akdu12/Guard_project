@@ -21,6 +21,7 @@ Python<br />
 Visual Code Studio<br />
 Android Studio<br />
 Firebase database<br />
+Jupyter Notebook<br />
 
 ## How to use the system:  <br />
 1- Connect your breakout garden to your Raspberry Pi<br />
