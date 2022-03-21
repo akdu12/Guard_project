@@ -1,10 +1,10 @@
 # GUARD  <br />
 
-Guard is an IoT security system that detects abnormalities in IoT devices. <br />
+Guard is an IoT security system that detects abnormalities in smart-home IoT devices. <br />
 
 ## Aim:<br />
 
-Detect abnormalities in IoT devices and inform smart-home owner of these abnormalities.<br />
+Detect abnormalities in IoT devices and inform smart-home owner of these abnormalities through a mobile application.<br />
 
 ## Technologies used: <br />
 
