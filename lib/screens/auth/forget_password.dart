@@ -21,6 +21,7 @@ class resetScreen extends StatelessWidget {
         onPressed: ()
           async{
             await FirebaseAuth.instance.sendPasswordResetEmail(email: emailController.text).then((value){
+              ScaffoldMessenger.of(context).showSnackBar(snackBarReset);
               Navigator.push(context, MaterialPageRoute(builder: (context) => login()));
             });
           },
@@ -58,7 +59,7 @@ class resetScreen extends StatelessWidget {
               child: Image.asset("assets/images/logo-2.png",fit: BoxFit.contain,
               )
           ),
-          Text("\nReset Your Password\n",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: kPrimaryColor),),
+          Text("\nReset Your Guard Account Password\n",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: kPrimaryColor),),
 
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -68,7 +69,7 @@ class resetScreen extends StatelessWidget {
               keyboardType: TextInputType.emailAddress,
               validator: (value)
               {
-                if(value!.isEmpty){
+                if(value == null || value.isEmpty){
                   return ("Please Enter Your Email");
                 }
                 //reg expression for email validation
@@ -84,7 +85,7 @@ class resetScreen extends StatelessWidget {
 
                 emailController.text = value!;
               },
-              textInputAction: TextInputAction.next,
+              textInputAction: TextInputAction.done,
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.mail),
                   contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
@@ -97,8 +98,9 @@ class resetScreen extends StatelessWidget {
 
             )
           ),
-          Text("\nAn email will be sent to you to reset your password.\n Make sure you put your registered email correctly\n",style: TextStyle(fontSize: 15,fontStyle: FontStyle.italic,color: kPrimaryColor)),
-          resetButton
+          Text("\nAn email will be sent to you shortly to reset your password.\n Make sure you type your registered email correctly\n",textAlign: TextAlign.center,style: TextStyle(fontSize: 15,fontStyle: FontStyle.italic,color: kPrimaryColor)),
+          resetButton,
+          SizedBox(height: 15),
 
           /*ElevatedButton(
             child: const Text("Reset Password"),

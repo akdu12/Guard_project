@@ -29,6 +29,8 @@ class _loginState extends State<login> {
 
 
 
+
+
   @override
   Widget build(BuildContext context) {
     // email field
@@ -97,6 +99,7 @@ class _loginState extends State<login> {
       ),
     );
 
+
     final loginButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
@@ -107,6 +110,7 @@ class _loginState extends State<login> {
         onPressed: () {
 
         signIn(emailController.text, passwordController.text);
+
         
         },
         child: Text(
@@ -214,12 +218,13 @@ class _loginState extends State<login> {
     {
       await _auth.signInWithEmailAndPassword(email: email, password: password)
       .then((uid) => {
-        //Fluttertoast.showToast(msg: "Login Successful!"),
+      ScaffoldMessenger.of(context).showSnackBar(snackBarLogin),
+
         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()))
        
         }).catchError((e){
+        ScaffoldMessenger.of(context).showSnackBar(e.msg);
 
-          //Fluttertoast.showToast(msg: e!.message);
         }
         
         

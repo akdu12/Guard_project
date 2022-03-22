@@ -156,6 +156,7 @@ class _registerState extends State<register> {
       ),
     );
 
+
     // confirm password field
     final confirmPasswordField = TextFormField(
       autofocus: false,
@@ -249,6 +250,7 @@ class _registerState extends State<register> {
                       emailField,
                       SizedBox(height: 20),
                       passwordField,
+                    Text("Hint: Your password should be 6 characters or more",style: TextStyle(fontSize: 13)),
                       SizedBox(height: 20),
                       confirmPasswordField,
                       SizedBox(height: 20),
@@ -304,9 +306,10 @@ class _registerState extends State<register> {
     .collection("users")
     .doc(user.uid)
     .set(userModel.toMap());
-    //FlutterToast.showToast(msg: "Account Created successfully!);
+    ScaffoldMessenger.of(context).showSnackBar(snackBarSignUp);
     Navigator.pushAndRemoveUntil(
         (context),
+
         MaterialPageRoute(builder: (context) => HomeScreen()), (route) => false);
 
 
