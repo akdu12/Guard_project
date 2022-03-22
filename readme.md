@@ -32,5 +32,8 @@ Jupyter Notebook<br />
 6- Open "guard_app" branch and select "Download file"<br />
 7- Prepare Flutter enviroment by downloading the necessary files and SDKs<br />
 8- Open Android Studio and run the code<br />
-9- Experience all features provided by the mobile application
+9- Experience all features provided by the mobile application<br />
+
+## Important note:  <br />
+Make sure your hardware is configured correctly and is working properly before running the mobile application
 
