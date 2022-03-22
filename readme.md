@@ -30,6 +30,7 @@ Jupyter Notebook<br />
 4- Pull "SensorManager.py" and "Pyrebase.py" codes from GitHub and run them in the Raspberry Pi<br />
 5- Make sure readings are sent to the database<br />
 6- Open "guard_app" branch and select "Download file"<br />
-7- Open Android Studio and run the code<br />
-8- Experience all features provided by the mobile application
+7- Prepare Flutter enviroment bydownloading the necessary files and SDKs
+8- Open Android Studio and run the code<br />
+9- Experience all features provided by the mobile application
 
