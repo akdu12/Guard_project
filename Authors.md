@@ -8,7 +8,7 @@ Email: 439200768@student.ksu.edu.sa<br /><br />
 Retal AlSharafi<br />
 Email: 439201146@student.ksu.edu.sa<br /><br />
 
-Supervisor: Dr. Bushra AlAhmadi<br /><br />
+Supervisor: Dr. Bushra AlAhmadi<br />
 Email: balahmadi@ksu.edu.sa<br /><br />
 
 Scrum Master: Dr. Maha AlYahya<br />
