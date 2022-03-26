@@ -1,0 +1,38 @@
+[
+    {
+      "uid": 1,
+      "email": "as@jkax",
+      "firstname": "accusamus",
+      "lastname": "csak",
+      "sensors" : [
+        {
+        "id": 1,
+        "name": "Air",
+        "status": true,
+        "location": "92998",
+        "description": "sjdak"
+      },
+      {
+        "id": 1,
+        "name": "quality",
+        "status": true,
+        "location": "92998",
+        "description": "sjdak"
+      },
+      {
+        "id": 1,
+        "name": "motion",
+        "status": true,
+        "location": "92998",
+        "description": "sjdak"
+      },
+      {
+        "id": 1,
+        "name": "xka",
+        "status": true,
+        "location": "92998",
+        "description": "sjdak"
+      }
+    ]
+  }
+]
