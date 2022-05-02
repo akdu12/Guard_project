@@ -123,7 +123,7 @@ class _registerState extends State<register> {
           )),
     );
 
-    //hub number field
+    //hub number field added
     final hubNumberField = TextFormField(
       autofocus: false,
       controller: hubNumberEditingController,
