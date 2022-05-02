@@ -122,6 +122,8 @@ class _registerState extends State<register> {
             borderRadius: BorderRadius.circular(10),
           )),
     );
+
+    //hub number field
     final hubNumberField = TextFormField(
       autofocus: false,
       controller: hubNumberEditingController,
