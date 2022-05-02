@@ -25,6 +25,7 @@ class _registerState extends State<register> {
   final firstNameEditingController = new TextEditingController();
   final secondNameEditingController = new TextEditingController();
   final emailEditingController = new TextEditingController();
+  final hubNumberEditingController = new TextEditingController();
   final passwordEditingController = new TextEditingController();
   final confirmPasswordEditingController = new TextEditingController();
 
@@ -117,6 +118,32 @@ class _registerState extends State<register> {
           prefixIcon: Icon(Icons.mail),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Email",
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+          )),
+    );
+    final hubNumberField = TextFormField(
+      autofocus: false,
+      controller: hubNumberEditingController,
+      keyboardType: TextInputType.name,
+      validator: (value) {
+        RegExp regex = new RegExp("A2803");
+        if (value!.isEmpty) {
+          return ("Hub Number cannot be Empty");
+        }
+        if (!regex.hasMatch(value)) {
+          return ("Enter a Valid Hub Number");
+        }
+        return null;
+      },
+      onSaved: (value) {
+        hubNumberEditingController.text = value!;
+      },
+      textInputAction: TextInputAction.next,
+      decoration: InputDecoration(
+          prefixIcon: Icon(Icons.numbers),
+          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          hintText: "Hub Number",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )),
